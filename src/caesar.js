@@ -42,7 +42,7 @@ const caesarModule = (function () {
     // I created an empty string to hold the encrypted or decrypted message
     let finalMessage = "";
     // I created a lower case version of the string pushed through the function
-    let lowerCase = input.toLowerCase();
+    const lowerCase = input.toLowerCase();
     // This if statement will check if the string needs to be encrypted of decrypted
     if (encode === true) {    
     // I have a for loop to run through each charachter in the string 
@@ -51,7 +51,7 @@ const caesarModule = (function () {
     // the indexed character is within the assigned codes for a and b.
         if(97 <= lowerCase[i].charCodeAt(0) && lowerCase[i].charCodeAt(0) <= 122) {
     // I use the find method to return the object that matches
-        let found = alphabet.find((letter) => letter.key === lowerCase[i]);
+        const found = alphabet.find((letter) => letter.key === lowerCase[i]);
     // Then its reduced down to just the value of the object. The encryted value.
         let number = found.value;
     // Then that number is added to the shift value
@@ -61,7 +61,7 @@ const caesarModule = (function () {
             if (alteredNum < 0) alteredNum += 26;
             if (alteredNum > 25) alteredNum -= 26;
     // Then it will use the find method to pull the object matching the new value
-          let refound = alphabet.find((num) => num.value === alteredNum);
+          const refound = alphabet.find((num) => num.value === alteredNum);
     // Will then be reduced to just the key value
           let converted = refound.key; 
     // It will then be added to the finalMessage string;

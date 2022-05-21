@@ -13,7 +13,7 @@ const substitutionModule = (function () {
     // This is a for loop to run through the alphabet entered to check for duplicate characters.
     for (let i = 0; i < alphabet.length; i++) {
       // This is to create another string minus the characters already checked and the one being used.
-      let filter = alphabet.substr(1+i,26-i);
+      const filter = alphabet.substr(1+i,26-i);
       // This if statement checks if the newly created string includes the indexed character.
       if (filter.includes(alphabet[i])) return false;
     }
@@ -52,7 +52,7 @@ const substitutionModule = (function () {
     // I created an empty string to hold the encrypted or decrypted message
     let finalMessage = "";
     // I created a lower case version of the string pushed through the function
-    let lowerCase = input.toLowerCase();
+    const lowerCase = input.toLowerCase();
     // This if statement will check if the string needs to be encrypted of decrypted
     if (encode === true) { 
     // I have a for loop to run through each charachter in the string    
